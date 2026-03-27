@@ -56,11 +56,11 @@ This discretization scheme results in the following stochastic sampling dynamics
 \trainedsolution{t_{k+1}}= \trainedsolution{t_{k}} + (\sigma^2_{T-t_{k}}-\sigma^2_{T-t_{k+1}}) \trainedscore{t_k} + \sqrt{\sigma^2_{T-t_{k}}-\sigma^2_{T-t_{k+1}}}Z \eqsp,
 \end{equation}
 for $k = 0,...,N-1$, $Z \sim \mathcal{N}(0, \Id_d)$.
-The only assumption we have to make to establish our result is a score approximation assumption : 
-\begin{itemize}
-    \item \(\discsolution{0}\) and $\lambda_{\R^d}$ are mutually absolutely continuous.
-    \item $\kl{\pforward{t}}{\discsolution[\param]{0}} <  \infty$
-\end{itemize}
+We initialize the backward not with the gaussian standaard distribution but using a general initialization $\discsolution[\param]{0}$ such that \(\discsolution{0}\) and $\lambda_{\R^d}$ are mutually absolutely continuous.
+We will use $\discsolution[\param]{0}$ to point to the law of $\trainedsolution{0}$ and to its density, the context will clarify what we mean. 
+We assume that 
+ $$\kl{\pforward{t}}{\discsolution[\param]{0}} <  \infty \eqsp .$$
+Furthermore we make the following important assumption of score approximation
 \begin{hypH}
 \label{assum:train}
 There exists $\varepsilon>0$ such that for all $0 \leq k \leq N-1$,
@@ -68,9 +68,87 @@ $$
 \E \Big[\|\backscore{t_k} - s_{\param}(T-t_k, \back{t_k})\|^2\Big] \leq \varepsilon\eqsp.
 $$
 \end{hypH}
-We say that 
-$$\int_{\mathbb{R}^d} \log\frac{p_T}{p_\param^0}(x ) p_T(x) dx$$
-is finite only in certain scenarios. Therefore : gaussian is not sufficient, the family of $p_\param$ has at least to respect : 
-$$\sup_{\param \in \param} \int_{\mathbb{R}^d} \log\frac{p_T}{p_\param^0}(x ) p_T(x) dx < + \infty$$
+Consider the following additional notations: for all $\theta$, $t\in[0,T]$, $0\leq k \leq N-1$,
+\begin{align}
+\label{eq:def:score:err}
+&\mathcal{E}_{\theta}(t_k,\back{t_k}) =  \scfc_{T-t_k}(\back{t_k}) - s_\theta(T-t_k,\back{t_k})\eqsp,\\ 
+&\mathcal{E}(t_k,t,\back{t_k},\back{t}) = \scfc_{T-t_k}(\back{t_k})  - \scfc_{T-t}(\back{t})\eqsp.\nonumber
+\end{align}
+\begin{theorem}\label{thm:KL_bound}
+For all distribution $\mudata$, for all $\delta >0$, it holds that  
+\[
+\kl{\pforward{\delta}}{\discsolution{T-\delta}} \leq \initerror(\theta) + \trainerror(\theta) + \discerror \eqsp,
+\]
+with
+\begin{align}
+\initerror(\theta)
+&= \kl{\pforward{T}}{\discsolution{0}} \eqsp,\label{eq:err:mixVE}\\
+\trainerror(\theta)&=
+\sum_{k = 0}^{N-1} 
+\gamma_k\E \left[\Big\|
+\mathcal{E}_{\theta}(t_k,\back{t_k})
+\Big\|^2\right]
+\label{eq:err:approxVE}\eqsp,\\
+\discerror&=
+\sum_{k = 0}^{N-1} 
+\int_{t_k}^{t_{k+1}} \barg_t^2
+\E \left[\Big\|
+\mathcal{E}(t_k,t,\back{t_k},\back{t})
+\Big\|^2\right] \, \mathrm{d}t \eqsp,
+\label{eq:err:discrVE}
+\end{align}
+%\begingroup
+%\footnotesize
+%\begin{equation}
+%  \hspace{-3.2cm}
+%\begin{aligned}
+%E_{\text{init}}(\schedulerVE_t,\theta)
+%  &= \kl{\pforward{T}}{\discsolution{0}} \eqsp
+%\end{aligned}
+%\label{eq:err:mixVE}
+%\end{equation}\gabriel{Maybe use $\sigma_t$ to try to make it smaller? (below)}
+%\begin{multline}
+%E_{\text{train}}(\schedulerVE_t,\theta)=\\
+% \sum_{k = 0}^{N-1} 
+%\Bigg[
+%  \E \left[\Big\|
+%    \mathcal{E}_{\theta}(t_k,\back{t_k})
+%  \Big\|^2\right]
+%  \int_{t_k}^{t_{k+1}} \barg_t^2 \, \mathrm{d}t
+%\Bigg] \eqsp
+%\label{eq:err:approxVE}
+%\end{multline}
+%\vspace{-0.5cm}
+%\begin{multline}
+%E_{\text{disc}}(\schedulerVE_t)=\\
+%\sum_{k = 0}^{N-1} 
+%\int_{t_k}^{t_{k+1}} \barg_t^2
+%\E \left[\Big\|
+%  \mathcal{E}(t_k,t,\back{t_k},\back{t})
+%\Big\|^2\right] \, \mathrm{d}t \eqsp
+%\label{eq:err:discrVE}
+%\end{multline}
+%\endgroup
+where $\mathcal{E}_{\theta}(t_k,\back{t_k}) $ and $\mathcal{E}(t_k,t,\back{t_k},\back{t})$ are defined in \eqref{eq:def:score:err}.
+%\begin{align*}
+%\mathcal{E}_{\theta}(t_k,\back{t_k}) &=  \scfc_{T-t_k}(\back{t_k}) - s_\theta(T-t_k,\back{t_k})\eqsp,\\ 
+%\mathcal{E}(t_k,t,\back{t_k},\back{t}) &= \scfc_{T-t_k}(\back{t_k})  - \scfc_{T-t}(\back{t})\eqsp.
+%\end{align*}
+In addition, the term $\discerror$ is upper bounded by 
+\begin{equation}\label{eq:information}
+\discerror' = 
+\max_{k = 0,\dots,N-1}  \gamma_k 
+\left\{ \information(\pforward{\delta}) - \information(\pforward{T}) \right\}\eqsp.
+\end{equation}
+Assume in addition that H\ref{assum:train} holds. Then,
+\begin{equation}\label{eq:thm_simplified}
+\kl{\pforward{\delta}}{\discsolution{T-\delta}} 
+\leq \kl{\pforward{T}}{\discsolution{0}} 
++  \sigma_T^2 \epsilon  + \discerror' \eqsp.
+\end{equation}
+\end{theorem}
+Therefore the gaussian initialization doesnt work in many context, for example if $\state_0$ is a Frechet and $\discsolution[\param]{0}$ a gaussian the $\kl{}{}$ will be infinite ant therefore there will be no bound. 
+But by extending to general initialization we cover all distributions. 
 
-Passando per l informazione di Fisher riesco a dimostrare che é sempre nulla. 
+%Passando per l informazione di Fisher riesco a dimostrare che é sempre nulla. 
+%l informazione di fisher si dimostra finita usando lei stessa. 
