@@ -1,0 +1,76 @@
+\section{Generalized Variance Exploding diffusion}
+We discuss in this section the existence of the forward and backward diffusion equations in the context of Variance Exploding framework. 
+Let $(\Omega, \calF, \prob)$ be a probability space and $\rmL^2(\Omega, \calF, \prob)$ the space of square-integrable random variables on $\Omega$. We denote by $\mudata$ the unknown data distribution on $\R^d$, and the goal of SGMs is to generate new samples from $\mudata$ given only an observed dataset.
+\subsection{Forward and Backward Process}
+Given $\state_0 \sim \mudata$ the distribution of interest and the standard forward Variance Exploding (VE) equation \citep{song2021scorebased}
+\begin{equation}\label{eq:VE_SDE}
+\rmd \state_t = \schedulerVE_t \, \dbrown_t\eqsp.
+\end{equation}
+where $\schedulerVE_t : \R^+ \to \R$ is assumed to be bounded and infinitely differentiable, we can state by applying \citet[Theorem 2.5]{karatzas1991brownian} without any assumption on the data distribution that the forward solution $(\state_t)_{t\in[0,T]}$ is defined on all intervall for $T>0$.
+Defining 
+\[
+\sigma_t^2 \coloneqq \int_0^t g_s \, \rmd s\eqsp.
+\]
+It can be stated that the solution
+\[
+\state_t = \state_0 + \int_{0}^{t} \schedulerVE_s ^2 \rmd s \overset{\mathcal{L}}{=} \state_0 + \sigma_t Z\eqsp,
+\]
+Therefore as well known in the literature the solution simply results to be the convolution of the data distribution with a gaussian. 
+In particular, for $t>0$, $\state_t$ admits a density $\pforward{t}(x)$ with respect to the Lebesgue measure $\lambda_{\R^d}$ and this density is highly regular. In particular the function $ (t,x)\mapsto\pforward{t}(x) \in C^{\infty}([\delta, T] \times \R^d)$, as shown in Lemma ---- . 
+
+Concerning the backward equation the situation, might seem more complicated. The existence of the backward equation is not given for any distribution and any forward sde admitting an explicit solution. In fact the sufficient condition stated in reference articles \citep{anderson1982reverse,haussmann1986time} require the data distribution 
+or the density of the forward (when available) to respect some regularity conditions. Thankfully in the (VE) context where the forward solution is simply the convolution of the distributin with a gaussian, this doesn't represent a problem as stated in our first proposition. 
+\begin{proposition}
+Given $\mudata$ a distribution and $\state_t, \pforward{t}(x)$ the solutions of the \eqref{eq:VE_SDE} the backward equation 
+\begin{equation}\label{eq:VE_back_sde}
+\rmd \back{t} =   \barg_t^2 \backscore{t} \rmd t + \barg_t \, \rmd \tilde{\brown}_t \eqsp ,
+\end{equation}
+where $\barg_t \coloneqq \schedulerVE_{T-t}$ and $\tilde{\brown}_t$ is an independent Brownian motion.
+For all initialization $\back{0}$ and for all $\delta>0$  \eqref{eq:VE_back_sde} admits a strong and unique solution $\back{} =\{\back{t}\}_{[0,T-\delta]}$ on the interval $[0, T-\delta]$. 
+In particular if $\back{0} \sim \pforward{T}$, for all $\delta>0$ it holds $\back{} \overset{\mathcal{L}}{=}  \{\state\}_{[\delta, T]}$.
+\end{proposition}
+The proposition that we presented establishes the existence of a backward strong solution for all
+
+\subsection{KL control on approximated process}
+In practice,  $\mu_*$ is not available; instead, we only have access to an i.i.d. sample $\state_0^i \sim \mu_*$, $1 \leq i \leq n$. 
+Consequently, the solution of \cref{eq:VE_back_sde} that would enable sample generation is not directly accessible, since neither the score nor the terminal distribution $\pforwardx{T}$ of the backward process are known. 
+Furthermore, the backward SDE does not admit a closed-form solution, making it necessary to rely on discretization schemes.
+
+For the purpose of theoretical analysis, following common practice, we may rely on either the Euler–Maruyama scheme \cite{gao2025wasserstein, silveri2025beyond} or the Exponential Euler–Maruyama scheme \cite{conforti2023kl, strasman2025analysis}. Remarkably, in the VE setting these two schemes coincide, allowing for a unified treatment of the KL bound.
+
+\paragraph{Score approximation and discretization. }
+By replacing the real score function $\nabla \log \pforward{T - t}$ using a trained neural network $s_{\param}(T- t,\cdot)$, we
+introduce the discretized backward dynamics
+\begin{equation}\label{eq:disceq}
+\rmd \trainedsolution{t}=  \barg_t^2 \trainedscore{t_k} \, \rmd t + \barg_t \, \rmd\tilde{\brown}_t\eqsp,
+\end{equation}
+for $t \in [t_k, t_{k+1}]$, where $t_{k+1} = t_k + h_{k+1}$, with $t_0 = 0$ and $t_N = T-\delta$
+which can be equivalently written, for  $t \in [0, T - \delta]$, as
+\begin{equation}\label{eq:disceq}
+\rmd \trainedsolution{t}
+    =  \sum_{k=0}^{N-1}\barg_t^2 \trainedscore{t_k} 1_{t \in [t_k, t_{k+1}]} \, \rmd t 
+        + \barg_t \, \rmd\tilde{\brown}_t\eqsp.
+\end{equation}
+This discretization scheme results in the following stochastic sampling dynamics:
+\begin{equation}\label{eq:discsolution}
+\trainedsolution{t_{k+1}}= \trainedsolution{t_{k}} + (\sigma^2_{T-t_{k}}-\sigma^2_{T-t_{k+1}}) \trainedscore{t_k} + \sqrt{\sigma^2_{T-t_{k}}-\sigma^2_{T-t_{k+1}}}Z \eqsp,
+\end{equation}
+for $k = 0,...,N-1$, $Z \sim \mathcal{N}(0, \Id_d)$.
+The only assumption we have to make to establish our result is a score approximation assumption : 
+\begin{itemize}
+    \item \(\discsolution{0}\) and $\lambda_{\R^d}$ are mutually absolutely continuous.
+    \item $\kl{\pforward{t}}{\discsolution[\param]{0}} <  \infty$
+\end{itemize}
+\begin{hypH}
+\label{assum:train}
+There exists $\varepsilon>0$ such that for all $0 \leq k \leq N-1$,
+$$
+\E \Big[\|\backscore{t_k} - s_{\param}(T-t_k, \back{t_k})\|^2\Big] \leq \varepsilon\eqsp.
+$$
+\end{hypH}
+We say that 
+$$\int_{\mathbb{R}^d} \log\frac{p_T}{p_\param^0}(x ) p_T(x) dx$$
+is finite only in certain scenarios. Therefore : gaussian is not sufficient, the family of $p_\param$ has at least to respect : 
+$$\sup_{\param \in \param} \int_{\mathbb{R}^d} \log\frac{p_T}{p_\param^0}(x ) p_T(x) dx < + \infty$$
+
+Passando per l informazione di Fisher riesco a dimostrare che é sempre nulla. 

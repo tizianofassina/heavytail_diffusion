@@ -1,0 +1,245 @@
+\begin{thebibliography}{39}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Allouche et~al.(2022)Allouche, Girard, and Gobet]{allouche2022evgan}
+Micha{\"e}l Allouche, St{\'e}phane Girard, and Emmanuel Gobet.
+\newblock Ev-gan: Simulation of extreme events with relu neural networks.
+\newblock \emph{Journal of Machine Learning Research}, 23\penalty0 (120):\penalty0 1--39, 2022.
+\newblock URL \url{http://jmlr.org/papers/v23/21-0663.html}.
+
+\bibitem[Anderson(1982)]{anderson1982reverse}
+Brian~DO Anderson.
+\newblock Reverse-time diffusion equation models.
+\newblock \emph{Stochastic Processes and their Applications}, 12\penalty0 (3):\penalty0 313--326, 1982.
+
+\bibitem[Baldridge et~al.(2024)Baldridge, Bauer, Bhutani, Brichtova, Bunner, Castrejon, Chan, Chen, Dieleman, Du, Eaton-Rosen, Fei, de~Freitas, Gao, Gladchenko, Gómez~Colmenarejo, Guo, Haig, Hawkins, Hu, Huang, Igwe, Kaplanis, Khodadadeh, Kim, Konyushkova, Langner, Lau, Lawton, Luo, Mokrá, Nandwani, Onoe, van~den Oord, Parekh, Pont-Tuset, Qi, Qian, Ramachandran, Rane, Rashwan, Razavi, Riachi, Srinivasan, Srinivasan, Strudel, Uria, Wang, Wang, Waters, Wolff, Wright, Xiao, Xiong, Xu, van Zee, Zhang, Zhang, Zhou, Zolna, and …]{Baldridge2024Imagen3}
+Jason Baldridge, Jakob Bauer, Mukul Bhutani, Nicole Brichtova, Andrew Bunner, Lluis Castrejon, Kelvin Chan, Yichang Chen, Sander Dieleman, Yuqing Du, Zach Eaton-Rosen, Hongliang Fei, Nando de~Freitas, Yilin Gao, Evgeny Gladchenko, Sergio Gómez~Colmenarejo, Mandy Guo, Alex Haig, Will Hawkins, Hexiang Hu, Huilian Huang, Tobenna~Peter Igwe, Christos Kaplanis, Siavash Khodadadeh, Yelin Kim, Ksenia Konyushkova, Karol Langner, Eric Lau, Rory Lawton, Shixin Luo, Soňa Mokrá, Henna Nandwani, Yasumasa Onoe, Aäron van~den Oord, Zarana Parekh, Jordi Pont-Tuset, Hang Qi, Rui Qian, Deepak Ramachandran, Poorva Rane, Abdullah Rashwan, Ali Razavi, Robert Riachi, Hansa Srinivasan, Srivatsan Srinivasan, Robin Strudel, Benigno Uria, Oliver Wang, Su~Wang, Austin Waters, Chris Wolff, Auriel Wright, Zhisheng Xiao, Hao Xiong, Keyang Xu, Marc van Zee, Junlin Zhang, Katie Zhang, Wenlei Zhou, Konrad Zolna, and ….
+\newblock Imagen 3.
+\newblock \emph{arXiv preprint}, arXiv:2408.07009, 2024.
+\newblock \doi{10.48550/arXiv.2408.07009}.
+\newblock URL \url{https://arxiv.org/abs/2408.07009}.
+
+\bibitem[Betker et~al.(2023)Betker, Goh, Jing, Brooks, Wang, Li, Ouyang, Zhuang, Lee, Guo, Manassra, Dhariwal, Chu, Jiao, and Ramesh]{Betker2023dalle3}
+James Betker, Gabriel Goh, Li~Jing, Tim Brooks, Jianfeng Wang, Linjie Li, Long Ouyang, Juntang Zhuang, Joyce Lee, Yufei Guo, Wesam Manassra, Prafulla Dhariwal, Casey Chu, Yunxin Jiao, and Aditya Ramesh.
+\newblock Improving image generation with better captions.
+\newblock Technical report, OpenAI and Microsoft, 2023.
+\newblock DALL-E 3 System Card.
+
+\bibitem[{Black Forest Labs}(2025)]{blackForestLabs_FLUX1dev_2025}
+{Black Forest Labs}.
+\newblock Flux.1-dev: 12b-parameter rectified flow transformer for text-to-image generation.
+\newblock \url{https://huggingface.co/black-forest-labs/FLUX.1-dev}, 2025.
+
+\bibitem[Bortoli(2022)]{debortoli2022convergence}
+Valentin~De Bortoli.
+\newblock Convergence of denoising diffusion models under the manifold hypothesis.
+\newblock \emph{Transactions on Machine Learning Research}, 2022.
+\newblock ISSN 2835-8856.
+\newblock URL \url{https://openreview.net/forum?id=MhK5aXo3gB}.
+\newblock Expert Certification.
+
+\bibitem[Bortoli et~al.(2021)Bortoli, Thornton, Heng, and Doucet]{bortoli2021diffusion}
+Valentin~De Bortoli, James Thornton, Jeremy Heng, and Arnaud Doucet.
+\newblock Diffusion schr\"odinger bridge with applications to score-based generative modeling.
+\newblock In A.~Beygelzimer, Y.~Dauphin, P.~Liang, and J.~Wortman Vaughan, editors, \emph{Advances in Neural Information Processing Systems}, 2021.
+\newblock URL \url{https://openreview.net/forum?id=9BnCwiXB0ty}.
+
+\bibitem[Bruno and Sabanis(2025)]{bruno2024wasserstein}
+Stefano Bruno and Sotirios Sabanis.
+\newblock Wasserstein convergence of score-based generative models under semiconvexity and discontinuous gradients.
+\newblock \emph{Transactions on Machine Learning Research}, 09 2025.
+\newblock URL \url{https://openreview.net/forum?id=vS9iVRB7XF}.
+\newblock Published 09/2025.
+
+\bibitem[Chen et~al.(2021)Chen, Zhang, Zen, Weiss, Norouzi, and Chan]{chen2020wavegrad}
+Nanxin Chen, Yu~Zhang, Heiga Zen, Ron~J Weiss, Mohammad Norouzi, and William Chan.
+\newblock Wavegrad: Estimating gradients for waveform generation.
+\newblock In \emph{International Conference on Learning Representations}, 2021.
+\newblock URL \url{https://openreview.net/forum?id=NsMLjcFaO8O}.
+
+\bibitem[Conforti et~al.(2025)Conforti, Durmus, and Silveri]{conforti2023kl}
+Giovanni Conforti, Alain Durmus, and Marta~Gentiloni Silveri.
+\newblock Kl convergence guarantees for score diffusion models under minimal data assumptions.
+\newblock \emph{SIAM Journal on Mathematical Analysis}, 7\penalty0 (1):\penalty0 86--109, 2025.
+\newblock \doi{10.1137/23M1613670}.
+\newblock URL \url{https://doi.org/10.1137/23M1613670}.
+
+\bibitem[Dhariwal and Nichol(2021)]{dhariwal2021diffusionbeatGan}
+Prafulla Dhariwal and Alexander~Quinn Nichol.
+\newblock Diffusion models beat {GAN}s on image synthesis.
+\newblock In A.~Beygelzimer, Y.~Dauphin, P.~Liang, and J.~Wortman Vaughan, editors, \emph{Advances in Neural Information Processing Systems}, 2021.
+\newblock URL \url{https://openreview.net/forum?id=AAWuCvzaVt}.
+
+\bibitem[Frey et~al.(2024)Frey, Berenberg, Zadorozhny, Kleinhenz, Lafrance-Vanasse, Hotzel, Wu, Ra, Bonneau, Cho, Loukas, Gligorijevic, and Saremi]{DBLP:journals/corr/abs-2306-12360}
+Nathan~C. Frey, Dan Berenberg, Karina Zadorozhny, Joseph Kleinhenz, Julien Lafrance-Vanasse, Isidro Hotzel, Yan Wu, Stephen Ra, Richard Bonneau, Kyunghyun Cho, Andreas Loukas, Vladimir Gligorijevic, and Saeed Saremi.
+\newblock Protein discovery with discrete walk-jump sampling.
+\newblock In \emph{The Twelfth International Conference on Learning Representations}, 2024.
+\newblock URL \url{https://openreview.net/forum?id=zMPHKOmQNb}.
+
+\bibitem[Gao et~al.(2025)Gao, Nguyen, and Zhu]{gao2025wasserstein}
+Xuefeng Gao, Hoang~M. Nguyen, and Lingjiong Zhu.
+\newblock Wasserstein convergence guarantees for a general class of score-based generative models.
+\newblock \emph{Journal of Machine Learning Research}, 26\penalty0 (43):\penalty0 1--54, 2025.
+\newblock URL \url{http://jmlr.org/papers/v26/24-0902.html}.
+
+\bibitem[gil Lee et~al.(2022)gil Lee, Kim, Shin, Tan, Liu, Meng, Qin, Chen, Yoon, and Liu]{lee2022priorgrad}
+Sang gil Lee, Heeseung Kim, Chaehun Shin, Xu~Tan, Chang Liu, Qi~Meng, Tao Qin, Wei Chen, Sungroh Yoon, and Tie-Yan Liu.
+\newblock Priorgrad: Improving conditional denoising diffusion models with data-dependent adaptive prior.
+\newblock In \emph{International Conference on Learning Representations}, 2022.
+\newblock URL \url{https://openreview.net/forum?id=_BNiN4IjC5}.
+
+\bibitem[Haussmann and Pardoux(1986)]{haussmann1986time}
+U.~G. Haussmann and E.~Pardoux.
+\newblock Time reversal of diffusions.
+\newblock \emph{Annals of Probability}, 14\penalty0 (4):\penalty0 1188--1205, October 1986.
+\newblock ISSN 0091-1798, 2168-894X.
+\newblock \doi{10.1214/aop/1176992362}.
+
+\bibitem[Hickling and Prangle(2025)]{hickling2025flexibletails}
+Tennessee Hickling and Dennis Prangle.
+\newblock Flexible tails for normalizing flows.
+\newblock In \emph{Forty-second International Conference on Machine Learning}, 2025.
+\newblock URL \url{https://openreview.net/forum?id=Z6RsbHAJk5}.
+
+\bibitem[Ho et~al.(2020)Ho, Jain, and Abbeel]{ho2020denoising}
+Jonathan Ho, Ajay Jain, and Pieter Abbeel.
+\newblock Denoising diffusion probabilistic models.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, volume~33, pages 6840--6851. Curran Associates, Inc., 2020.
+\newblock URL \url{https://proceedings.neurips.cc/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html}.
+
+\bibitem[Huster et~al.(2021)Huster, Cohen, Lin, Chan, Kamhoua, Leslie, Chiang, and Sekar]{huster2021pareto}
+Todd Huster, Jeremy~E.J. Cohen, Zinan Lin, Kevin Chan, Charles Kamhoua, Nandi Leslie, Cho-Yu~Jason Chiang, and Vyas Sekar.
+\newblock Pareto gan: Extending the representational power of gans to heavy-tailed distributions.
+\newblock In \emph{Proceedings of the 38th International Conference on Machine Learning}, volume 139 of \emph{PMLR}, pages 4690--4699. PMLR, 2021.
+\newblock URL \url{http://proceedings.mlr.press/v139/huster21a.html}.
+
+\bibitem[Karatzas and Shreve(1991)]{karatzas1991brownian}
+Ioannis Karatzas and Steven~E. Shreve.
+\newblock \emph{Brownian Motion and Stochastic Calculus}, volume 113 of \emph{Graduate Texts in Mathematics}.
+\newblock Springer-Verlag, New York, 2 edition, 1991.
+\newblock \doi{10.1007/978-1-4612-0949-2}.
+
+\bibitem[Kong et~al.(2021)Kong, Ping, Huang, Zhao, and Catanzaro]{kong2021diffwave}
+Zhifeng Kong, Wei Ping, Jiaji Huang, Kexin Zhao, and Bryan Catanzaro.
+\newblock Diffwave: A versatile diffusion model for audio synthesis.
+\newblock In \emph{International Conference on Learning Representations}, 2021.
+\newblock URL \url{https://openreview.net/forum?id=a-xFK8Ymz5J}.
+
+\bibitem[Lafon et~al.(2023)Lafon, Naveau, and Fablet]{lafon2023vae}
+Nicolas Lafon, Philippe Naveau, and Ronan Fablet.
+\newblock A vae approach to sample multivariate extremes.
+\newblock \emph{arXiv preprint arXiv:2306.10987}, 2023.
+
+\bibitem[Laszkiewicz et~al.(2022)Laszkiewicz, Lederer, and Fischer]{laszkiewicz2022marginal}
+Mike Laszkiewicz, Johannes Lederer, and Asja Fischer.
+\newblock Marginal tail-adaptive normalizing flows, 2022.
+\newblock URL \url{https://openreview.net/forum?id=per0G3dnkYh}.
+
+\bibitem[Li et~al.(2022)Li, Thickstun, Gulrajani, Liang, and Hashimoto]{li2022diffusionlm}
+Xiang~Lisa Li, John Thickstun, Ishaan Gulrajani, Percy Liang, and Tatsunori~B. Hashimoto.
+\newblock Diffusion-lm improves controllable text generation.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, volume~35, pages 4328--4343, 2022.
+\newblock URL \url{https://github.com/XiangLi1999/Diffusion-LM}.
+
+\bibitem[McDonald et~al.(2022)McDonald, Tan, and Luo]{mcdonald2022cometflows}
+Andrew McDonald, Pang-Ning Tan, and Lifeng Luo.
+\newblock Comet flows: Towards generative modeling of multivariate extremes and tail dependence.
+\newblock In \emph{Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence (IJCAI)}, pages 3328--3334. IJCAI Organization, 2022.
+
+\bibitem[Müller-Franzes et~al.(2022)Müller-Franzes, Niehues, Khader, …, and Truhn]{muller2022medfusion}
+Gustav Müller-Franzes, Jan~Moritz Niehues, Firas Khader, …, and Daniel Truhn.
+\newblock Diffusion probabilistic models beat gans on medical images.
+\newblock \emph{arXiv preprint arXiv:2212.07501}, 2022.
+\newblock URL \url{https://arxiv.org/abs/2212.07501}.
+
+\bibitem[Pandey et~al.(2025)Pandey, Pathak, Xu, Mandt, Pritchard, Vahdat, and Mardani]{pandey2025heavytailed}
+Kushagra Pandey, Jaideep Pathak, Yilun Xu, Stephan Mandt, Michael Pritchard, Arash Vahdat, and Morteza Mardani.
+\newblock Heavy-tailed diffusion models.
+\newblock In \emph{The Thirteenth International Conference on Learning Representations}, 2025.
+\newblock URL \url{https://openreview.net/forum?id=tozlOEN4qp}.
+
+\bibitem[Rombach et~al.(2022)Rombach, Blattmann, Lorenz, Esser, and Ommer]{rombach2022high}
+Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Bjorn Ommer.
+\newblock { High-Resolution Image Synthesis with Latent Diffusion Models }.
+\newblock In \emph{2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pages 10674--10685, Los Alamitos, CA, USA, June 2022. IEEE Computer Society.
+\newblock \doi{10.1109/CVPR52688.2022.01042}.
+\newblock URL \url{https://doi.ieeecomputersociety.org/10.1109/CVPR52688.2022.01042}.
+
+\bibitem[Scholz and Turner(2026)]{scholz2026warm}
+Jonas Scholz and Richard~E. Turner.
+\newblock Warm starts accelerate conditional diffusion, 2026.
+\newblock URL \url{https://openreview.net/forum?id=3kzDWrohSY}.
+
+\bibitem[Shariatian et~al.(2025)Shariatian, Simsekli, and Durmus]{shariatian2025heavy}
+Dario Shariatian, Umut Simsekli, and Alain~Oliviero Durmus.
+\newblock Denoising levy probabilistic models.
+\newblock In \emph{The Thirteenth International Conference on Learning Representations}, 2025.
+\newblock URL \url{https://openreview.net/forum?id=SYmUS6qRub}.
+
+\bibitem[Shen et~al.(2025)Shen, GAN, and Ling]{shen2025information}
+Yirong Shen, Lu~GAN, and Cong Ling.
+\newblock Information theoretic learning for diffusion models with warm start.
+\newblock In \emph{The Thirty-ninth Annual Conference on Neural Information Processing Systems}, 2025.
+\newblock URL \url{https://openreview.net/forum?id=3IbKbmNci3}.
+
+\bibitem[Silveri and Ocello(2025)]{silveri2025beyond}
+Marta~Gentiloni Silveri and Antonio Ocello.
+\newblock Beyond log-concavity and score regularity: Improved convergence bounds for score-based generative models in w2-distance.
+\newblock In \emph{Forty-second International Conference on Machine Learning}, 2025.
+\newblock URL \url{https://openreview.net/forum?id=gVenpttGec}.
+
+\bibitem[Sohl-Dickstein et~al.(2015)Sohl-Dickstein, Weiss, Maheswaranathan, and Ganguli]{sohl2015deep}
+Jascha Sohl-Dickstein, Eric Weiss, Niru Maheswaranathan, and Surya Ganguli.
+\newblock Deep unsupervised learning using nonequilibrium thermodynamics.
+\newblock In Francis Bach and David Blei, editors, \emph{Proceedings of the 32nd International Conference on Machine Learning}, volume~37 of \emph{Proceedings of Machine Learning Research}, pages 2256--2265, Lille, France, 07--09 Jul 2015. PMLR.
+\newblock URL \url{https://proceedings.mlr.press/v37/sohl-dickstein15.html}.
+
+\bibitem[Song and Ermon(2019)]{song2019generative}
+Yang Song and Stefano Ermon.
+\newblock Generative modeling by estimating gradients of the data distribution.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2019.
+\newblock URL \url{https://openreview.net/forum?id=B1lcYrBgLH}.
+
+\bibitem[Song et~al.(2021)Song, Sohl-Dickstein, Kingma, Kumar, Ermon, and Poole]{song2021scorebased}
+Yang Song, Jascha Sohl-Dickstein, Diederik~P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole.
+\newblock Score-based generative modeling through stochastic differential equations.
+\newblock In \emph{International Conference on Learning Representations}, 2021.
+\newblock URL \url{https://openreview.net/forum?id=PxTIG12RRHS}.
+
+\bibitem[Strasman et~al.(2025)Strasman, Ocello, Boyer, Corff, and Lemaire]{strasman2025analysis}
+Stanislas Strasman, Antonio Ocello, Claire Boyer, Sylvain~Le Corff, and Vincent Lemaire.
+\newblock An analysis of the noise schedule for score-based generative models.
+\newblock \emph{Transactions on Machine Learning Research}, 2025.
+\newblock ISSN 2835-8856.
+\newblock URL \url{https://openreview.net/forum?id=BlYIPa0Fx1}.
+
+\bibitem[Yoon et~al.(2022)Yoon, Park, Kim, and Lim]{yoon2023levy}
+Eunbi Yoon, Keehun Park, Jinhyeok Kim, and Sungbin Lim.
+\newblock Score-based generative models with l\'evy processes.
+\newblock In \emph{NeurIPS 2022 Workshop on Score-Based Methods}, 2022.
+\newblock URL \url{https://openreview.net/forum?id=ErzyBArv6Ue}.
+
+\bibitem[Zand et~al.(2024)Zand, Etemad, and Greenspan]{zand2024diffusion}
+Mohsen Zand, Ali Etemad, and Michael Greenspan.
+\newblock Diffusion models with deterministic normalizing flow priors.
+\newblock \emph{Transactions on Machine Learning Research}, 2024.
+\newblock ISSN 2835-8856.
+\newblock URL \url{https://openreview.net/forum?id=ACMNVwcR6v}.
+
+\bibitem[Zheng et~al.(2023)Zheng, He, Chen, and Zhou]{zheng2023truncated}
+Huangjie Zheng, Pengcheng He, Weizhu Chen, and Mingyuan Zhou.
+\newblock Truncated diffusion probabilistic models and diffusion-based adversarial auto-encoders.
+\newblock In \emph{The Eleventh International Conference on Learning Representations}, 2023.
+\newblock URL \url{https://openreview.net/forum?id=HDxgaKk956l}.
+
+\bibitem[Zou et~al.(2023)Zou, Kim, and Kang]{zou2023survey}
+Hao Zou, Zae~Myung Kim, and Dongyeop Kang.
+\newblock A survey of diffusion models in natural language processing.
+\newblock \emph{arXiv preprint arXiv:2305.14671}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2305.14671}.
+
+\end{thebibliography}

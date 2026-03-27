@@ -1,0 +1,132 @@
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+%     \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading neurips_2026
+
+% The authors should use one of these tracks.
+% Before accepting by the NeurIPS conference, select one of the options below.
+% 0. "default" for submission
+\usepackage{xcolor} 
+\usepackage{neurips_2026}
+% the "default" option is equal to the "main" option, which is used for the Main Track with double-blind reviewing.
+% 1. "main" option is used for the Main Track
+%  \usepackage[main]{neurips_2026}
+% 2. "position" option is used for the Position Paper Track
+%  \usepackage[position]{neurips_2026}
+% 3. "eandd" option is used for the Evaluations & Datasets Track
+% \usepackage[eandd]{neurips_2026}
+% if you need to opt-in for a single-blind submission in the E&D track:
+%\usepackage[eandd, nonanonymous]{neurips_2026}
+% 4. "creativeai" option is used for the Creative AI Track
+%  \usepackage[creativeai]{neurips_2026}
+% 5. "sglblindworkshop" option is used for the Workshop with single-blind reviewing
+% \usepackage[sglblindworkshop]{neurips_2026}
+% 6. "dblblindworkshop" option is used for the Workshop with double-blind reviewing
+%  \usepackage[dblblindworkshop]{neurips_2026}
+
+% After being accepted, the authors should add "final" behind the track to compile a camera-ready version.
+% 1. Main Track
+% \usepackage[main, final]{neurips_2026}
+% 2. Position Paper Track
+%  \usepackage[position, final]{neurips_2026}
+% 3. Evaluations & Datasets Track
+% \usepackage[eandd, final]{neurips_2026}
+% 4. Creative AI Track
+%  \usepackage[creativeai, final]{neurips_2026}
+% 5. Workshop with single-blind reviewing
+%  \usepackage[sglblindworkshop, final]{neurips_2026}
+% 6. Workshop with double-blind reviewing
+%  \usepackage[dblblindworkshop, final]{neurips_2026}
+% Note. For the workshop paper template, both \title{} and \workshoptitle{} are required, with the former indicating the paper title shown in the title and the latter indicating the workshop title displayed in the footnote.
+% For workshops (5., 6.), the authors should add the name of the workshop, "\workshoptitle" command is used to set the workshop title.
+% \workshoptitle{WORKSHOP TITLE}
+
+% "preprint" option is used for arXiv or other preprint submissions
+ % \usepackage[preprint]{neurips_2026}
+
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+        % colors
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage[capitalize,noabbrev]{cleveref}
+\usepackage{xargs}
+\usepackage{natbib} 
+\usepackage{datatool}
+\usepackage{tikz}
+\usepackage{xparse}
+\input{macros.tex}
+
+% Note. For the workshop paper template, both \title{} and \workshoptitle{} are required, with the former indicating the paper title shown in the title and the latter indicating the workshop title displayed in the footnote. 
+\title{Generalizing Score based Generative Model Applications}
+
+\author{%
+Tiziano, Sylvain, Gabriel, Thomas\thanks{Use footnote for providing further information
+about author (webpage, alternative address)---\emph{not} for acknowledging
+funding agencies.} \\
+Department of Computer Science\\
+Cranberry-Lemon University\\
+Pittsburgh, PA 15213 \\
+\texttt{hippo@cs.cranberry-lemon.edu} \\
+% examples of more authors
+% \And
+% Coauthor \\
+% Affiliation \\
+% Address \\
+% \texttt{email} \\
+% \AND
+% Coauthor \\
+% Affiliation \\
+% Address \\
+% \texttt{email} \\
+% \And
+% Coauthor \\
+% Affiliation \\
+% Address \\
+% \texttt{email} \\
+% \And
+% Coauthor \\
+% Affiliation \\
+% Address \\
+% \texttt{email} \\
+}
+
+
+\begin{document}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\crefname{assumption}{assumption}{assumptions}
+\maketitle
+\input{abstract.tex}
+\input{introduction.tex}
+%\input{related.tex}
+\input{main_results.tex}
+\section{Experiments}
+\begin{itemize}
+    \item We present experiments with normal datasets. We show that everything works well and we also saved some time. This is not new so this part will not be central. 
+    \item We present experiments with heavytail distribution. We show that it works pretty well, so that there is hope and ongoing work to do to correctly choose the flow $p_\theta$ which is exactly the point of research where we are stuck. 
+    \item We can include Nicolas and he could help me with doing the simulations on the heavytail datasets. As datasets i propose the synthetic dataset i created and the Comephere data which can be cleaned by me and Nicolas. 
+\end{itemize}
+
+\bibliographystyle{plainnat} 
+\bibliography{biblio}
+\end{document}

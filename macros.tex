@@ -1,0 +1,156 @@
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\prob}{\mathbb{P}}
+
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\spaceg}{G^*}
+\newcommand{\simplexg}{\ensuremath{\bar{G^*}}}
+\newcommand{\localrad}[2]{\ensuremath{R_\ndata(#1, #2)}}
+\def\state{\overrightarrow{X}} % this means that the main state variable will always be X. We use capital X to the random variable 
+\def\bara{\bar{\alpha}}
+\def\ausiliar{\rho}
+\def\barg{\bar{g}}
+\def\barsigma{\bar{\sigma}}
+\def\lstate{\operatorname{x}} % this means that the main state variable will always be x. We use lower x to indicate values that the random variable takes, as for densities for example.
+\def\rmd{\mathrm{d}} %
+\def\law{\mathcal{L}}
+\def\interval{[0,T]}
+\def\dt{\rmd \operatorname{t}}
+\def\dbrown{\rmd\!\brown}
+\def\brown{\operatorname{B}}
+\def\rset{\mathbb{R}}
+\def\rsetpos{\mathbb{R}_{\geq 0}}
+\def\statedim{d}
+\def\targetdist{\mu_{*}}
+\def\eqsp{\;}
+\def\score{\nabla \log \rho}
+\def\realint{\int_{\R^d}}
+
+
+%Useful commands from my papers with Sylvain Eric and others
+\newcommand{\kl}[2]{\operatorname{D}_{\operatorname{KL}}\left(#1||#2\right)}
+\newcommand{\W}[2]{\operatorname{W}\left(#1||#2\right)}
+\newcommand{\dist}[2]{\operatorname{D}\left(#1||#2\right)}
+\newcommand{\dens}[2]{#1\left(#2\right)}
+\newcommand{\condd}[3]{\dens{#1}{#3 | #2}}
+\newcommand{\utility}[1]{\mathrm{U}(#1)}
+\newcommand{\mseloss}[2]{\operatorname{MSE}(#1; #2)}
+\newcommand{\measop}[1]{f(#1)}
+\def\measnoise{\varepsilon_\lmeas}
+
+\newcommand{\fwmarg}[1]{p_{#1}} % distribution of the foward sde at instant #1
+\newcommand{\fwmargd}[2]{\dens{p_{#1}}{#2}} % densitiy of the foward sde at instant #1
+\newcommand{\fwtrans}[2]{p_{#2 | #1}} %transition kernel for foward SDE
+
+\newcommand{\mudata}{\mu_{\text{data}}}
+
+
+\newcommand{\PE}[2]{\mathbb{E}_{#1}\left[#2\right]} % Expected value operator
+\newcommand{\PP}[1]{\mathbb{P}\left(#1\right)} % Expected value operator
+\newcommand{\PV}[2]{\mathbb{V}_{#1}\left[#2\right]} % Variance operator
+\newcommand{\CPE}[3]{\PE{#1}{#3 | #2}} % Conditional expected value
+
+\newcommand{\gausspdf}{\varphi}
+\newcommand{\rme}{\mathrm{e}}
+\newcommand{\ola}{\overleftarrow}
+\newcommand{\ora}{\overrightarrow}
+\newcommand{\eqdef}{:=}
+\newcommand{\param}{\theta}
+\newcommand{\paramdim}{d_\theta}
+\def\paramsp{\Theta}
+\newcommand{\pihat}{\widehat{\pi}_N^{(\beta,\param)}}
+\newcommand{\sched}{\beta}
+\def \Nc{\mathcal{N}}
+\newcommand{\pdata}{\pi_{data}}
+
+
+\newcommand{\logp}[1]{\log \tilde{p}_{T - #1} (\x{#1})}
+\newcommand{\pforward}[1]{\vec{
+p}_{#1}}
+\newcommand{\backtildex}[1]{\tilde{X}_{#1}}
+
+\newcommand{\trainedsolution}[1]{X^{\param}_{#1}}
+\newcommand{\trainedsolutioninit}[2]{X^{\theta,#2}_{#1}}
+\newcommand{\trainedscorex}[1]{s_{\param}(T- #1, \back{#1})}
+\newcommand{\trainedscorenov}[1]{s_{\param}(T- #1, \back{#1}^x)}
+\newcommand{\dl}{\, d\lambda_{\mathbb{R}^d}}
+\newcommand{\ptildex}{\tilde{p}_t(x)}
+\newcommand{\pforwardx}[1]{\vec{p}_{#1}}
+
+\newcommand{\gam}{\gamma(x)}
+\newcommand{\trainedscore}[1]{s_{\param}(T- #1, \trainedsolution{#1})}
+
+\newcommand{\back}[1]{\overleftarrow{X}_{#1}}
+\newcommand{\backscoretilde}[1]{\nabla \log \tilde{p}_{T - #1} (\back{#1})}
+
+\newcommand{\backtildedensityW}[1]{\tilde{p}^{\param}_{#1}}
+\newcommand{\backscore}[1]{\nabla \log \pforward{T - #1} (\back{#1})}
+\newcommand{\backscorenov}[1]{\nabla \log \pforward{T - #1} (\back{#1}^x)}
+
+\newcommand{\backscoretheta}[1]{\nabla \log \pforward{T - #1} (\trainedsolution{#1})}
+
+\newcommand{\scorep}[1]{\nabla \log \pforward{#1}}
+\newcommand{\net}[1]{s_{\param}(T-#1)}
+
+\newcommand{\discsolution}[2][\param]{p_{#2}^{#1}}
+\newcommand{\schedulerVE}{g}
+\newcommand{\information}{\mathcal{I}}
+\newcommand{\pinf}{\pi_{\infty}}
+
+\newcommand{\ind}{\mathds{1}}
+\newcommand{\Id}{\mathrm{I}}
+\newcommand{\scfc}{\mathsf{s}}
+
+\newcommand{\initerror}{\mathsf{E}_{\operatorname{init}}}
+\newcommand{\trainerror}{\mathsf{E}_{\operatorname{train}}}
+\newcommand{\discerror}{\mathsf{E}_{\operatorname{disc}}}
+\newcommand{\rmL}{\mathrm{L}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\borelians}[1]{\mathcal{B}(#1)}
+\def\tensprod{\otimes}
+\def\ndata{n}
+\makeatletter
+\NewDocumentCommand{\distn}{g g}{%
+  d_{\ndata}\IfValueTF{#1}{\left( #1 , #2 \right)}{}%
+}
+\def\maxray{r_{\ndata}}
+\NewDocumentCommand{\distnparam}{g g}{%
+  \bar{d}_{\ndata}\IfValueTF{#1}{\left( #1 , #2 \right)}{}%
+}
+\newcommand{\nballs}[3]{N(#1, #2, #3)}
+\newcommand{\chunk}[3]{{#1}^{#2:#3}}
+\newcommand{\emin}[1]{\widehat{#1}^{\ndata}}
+\newcommand{\tmin}[1]{#1^{\star}}
+\NewDocumentCommand{\mfun}{o o}{\operatorname{m}\IfValueTF{#1}{(#2; #1)}{}}
+\NewDocumentCommand{\zeromfun}{o o}{\operatorname{g}_{\IfValueTF{#1}{#1}{}}\IfValueTF{#2}{\left(#2\right)}{}}
+\NewDocumentCommand{\eintmfun}{o o}{\operatorname{M}_{\ndata}\IfValueTF{#2}{\IfValueTF{#1}{(#2; #1)}{(#2)}}{}}
+\NewDocumentCommand{\tintmfun}{o}{\operatorname{M}_{\star}\IfValueTF{#1}{(#1)}{}}
+\NewDocumentCommand{\empmeas}{o o}{\mu_{\operatorname{emp}}\IfValueTF{#1}{\IfValueTF{#2}{\left(#1; #2\right)}{\left(#1\right)}}{}}
+\NewDocumentCommand{\lpnorm}{m o o}{\left\|#1\right\|_{\operatorname{L}^{#2}(#3)}}
+\NewDocumentCommand{\onorm}{m o}{\left\|#1\right\|_{\psi_#2}}
+\NewDocumentCommand{\flow}{o o}{\operatorname{T}\IfValueTF{#1}{_{#1}}{}\IfValueTF{#2}{(#2)}{}}
+\NewDocumentCommand{\jflow}{o o}{\operatorname{J}_{\operatorname{T}\IfValueTF{#1}{_{#1}}{}}\IfValueTF{#2}{(#2)}{}}
+\NewDocumentCommand{\invflow}{o o}{\operatorname{T}^{-1}\IfValueTF{#1}{_{#1}}{}\IfValueTF{#2}{(#2)}{}}
+\NewDocumentCommand{\pset}{m}{\mathcal{P}\left(#1\right)}
+\NewDocumentCommand{\mlip}{o}{\operatorname{b}\IfValueTF{#1}{\left(#1\right)}{}}
+\newcommand{\logdet}[1]{\operatorname{logdet}\left(#1\right)}
+\newcommand{\diameter}[1]{\operatorname{Diam}(#1)}
+\def\refnfmeas{u}
+\newcommand{\pushforward}[2]{{#1}_{\# #2}}
+\newcommand{\worstconcentrationvar}[2]{\operatorname{Z}_{\ndata}(#1, #2)}
+\newcommand{\gabriel}[1]{\textcolor{red}{GC: #1}}
+\newcommand{\tiz}[1]{\textcolor{red}{TF: #1}}
+\newcommand{\cvx}[1]{\overline{#1}}
+\newcommand{\lrmc}[1]{\cvx{R}_{\ndata}(#1)}
+\newcommand{\bernoulli}[1]{\operatorname{Bern}(#1)}
+\def\ctesupconcentration{\overline{\operatorname{C}}}
+\newcounter{hypH}
+\newenvironment{hypH}{
+    \refstepcounter{hypH}
+    \begin{itemize}
+    \item[{\bf H\arabic{hypH}}]
+    }
+{\end{itemize}}
