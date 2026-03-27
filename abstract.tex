@@ -1,11 +1,5 @@
 \begin{abstract}
-It is not clear in the literature if SDE based diffusion models can be used for any distribution. 
-In particular it is not clear if the theoretical backward equation is well posed in any case and if
-the standard approximation using a trained score and a gaussian initialization is 
-sufficient for approximating any distribution. 
-In recent literature in particular a debate around the possibility of applying diffusion models to heavytail distributions is grown. 
-In this paper we theoretically show that the use of early stopping and the replacement of the gaussian initialization with a suitable one
-allows the generalization of the framework of diffusion models to any distribution. In particular we show that the backward is well posed and we generalize a KL-based theorem 
-to any existent distribution by replacing the gaussian initialiation, that is not sufficient, with a suitable one. 
-We test our idea on toy datasets, classical datasets and heavytail datasets, showing that this framework is efficient in the number of steps and improves the generation in the heavytail context. 
+Score-based generative models (SGMs) have achieved remarkable empirical success, yet their theoretical foundations remain incomplete. Two fundamental questions are largely unresolved: for which distributions can the backward SDE be rigorously justified, and under what conditions does the approximate diffusion converge to the target distribution? All existing theoretical analyses rely on strong assumptions on the data distribution, and the problem of heavy-tailed distributions remains particularly open.
+In this paper, we address both questions. We first prove that the backward SDE is well-posed for any data distribution, establishing the diffusion framework in full generality. We then show that combining early stopping with a flexible initialization scheme — replacing the standard Gaussian prior with a distribution adapted to the target — is sufficient to guarantee KL convergence of the approximate diffusion without any assumption on the target distribution, generalizing \cite[Theorem 1]{conforti2023kl} to this end.
+On the practical side, we validate our initialization-aware approach on standard benchmarks, showing that a well-chosen initialization improves generation quality while reducing the number of required denoising steps. We further take a first step toward heavy-tailed distribution modeling with standard diffusion models, discussing suitable families of initialization priors and providing empirical evidence on toy, synthetic climatic, and real climatic datasets that proper initialization meaningfully improves over standard diffusion in this challenging regime.
 \end{abstract}
